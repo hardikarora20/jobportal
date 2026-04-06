@@ -1,0 +1,108 @@
+package com.example.jobportal.entity;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
+import java.time.LocalDateTime;
+
+@Entity
+@Table(name = "contact")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class Contact {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "full_name", nullable = false)
+    private String fullName;
+
+    @Column(name = "email", nullable = false)
+    private String email;
+
+    @Column(name = "user_type", nullable = false)
+    private String userType; // Job Seeker, Employer, Other
+
+    @Column(name = "subject", nullable = false)
+    private String subject;
+
+    @Column(name = "message", nullable = false, length = 2000)
+    private String message;
+
+    @Column(name = "created_at", nullable = false)
+    private LocalDateTime createdAt;
+
+    /* -------------------- Lifecycle -------------------- */
+
+    @PrePersist
+    protected void onCreate() {
+        this.createdAt = LocalDateTime.now();
+    }
+
+    /* -------------------- Constructors -------------------- */
+
+//    public Contact() {
+//    }
+//
+//    public Contact(String fullName, String email, String userType, String subject, String message) {
+//        this.fullName = fullName;
+//        this.email = email;
+//        this.userType = userType;
+//        this.subject = subject;
+//        this.message = message;
+//    }
+
+    /* -------------------- Getters & Setters -------------------- */
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+}
