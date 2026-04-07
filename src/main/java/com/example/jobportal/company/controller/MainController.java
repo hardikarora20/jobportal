@@ -1,8 +1,7 @@
-package com.example.jobportal.controller;
+package com.example.jobportal.company.controller;
 
 import com.example.jobportal.dto.CompanyDto;
-import com.example.jobportal.entity.Company;
-import com.example.jobportal.service.CompanyService;
+import com.example.jobportal.company.service.CompanyService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

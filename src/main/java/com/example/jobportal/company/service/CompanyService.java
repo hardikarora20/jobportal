@@ -1,5 +1,6 @@
-package com.example.jobportal.service;
+package com.example.jobportal.company.service;
 
+import com.example.jobportal.company.service.ICompanyService;
 import com.example.jobportal.dto.CompanyDto;
 import com.example.jobportal.entity.Company;
 import com.example.jobportal.repository.CompanyRespository;
@@ -9,7 +10,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class CompanyService implements ICompanyService{
+public class CompanyService implements ICompanyService {
     CompanyRespository companyRepository;
 
     public CompanyService(CompanyRespository companyRepository) {

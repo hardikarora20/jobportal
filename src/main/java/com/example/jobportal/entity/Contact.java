@@ -38,10 +38,10 @@ public class Contact {
 
     /* -------------------- Lifecycle -------------------- */
 
-    @PrePersist
-    protected void onCreate() {
-        this.createdAt = LocalDateTime.now();
-    }
+//    @PrePersist
+//    protected void onCreate() {
+//        this.createdAt = LocalDateTime.now();
+//    }
 
     /* -------------------- Constructors -------------------- */
 
@@ -95,5 +95,9 @@ public class Contact {
 
     public LocalDateTime getCreatedAt() {
         return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
 }
