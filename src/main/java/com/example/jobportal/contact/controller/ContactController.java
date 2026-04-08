@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/contact")
+@CrossOrigin(origins = "http://localhost:5500")
 public class ContactController {
 
     private IContactService contactService;

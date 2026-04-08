@@ -19,13 +19,20 @@ public class MainController {
     }
 
     @GetMapping("/{name}")
-    public ResponseEntity<String> hello(@PathVariable String name){
+    public ResponseEntity<String> hello(@PathVariable String name) throws Exception {
 //        return "hello " + name;
         return ResponseEntity.status(201).body("hello human, " + name);
+//        to test exception handling
+//        throw new Exception("tried throwing exception");
     }
 
     @GetMapping
     public ResponseEntity<List<CompanyDto>> getAllCompanies(){
         return ResponseEntity.status(200).body(companyService.getAllCompanies());
     }
+
+//    if the same method for handling exception is defined here
+//    then it won't go to the globalexceptionhandler
+//    as it works with the nearest matching method
+
 }
