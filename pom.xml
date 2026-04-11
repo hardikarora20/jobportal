@@ -45,6 +45,12 @@
             <scope>runtime</scope>
         </dependency>
 
+        <!-- Validation -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+
         <!-- DevTools -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -65,12 +71,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
-        </dependency>
-        
-        <dependency>
-            <groupId>com.example</groupId>
-            <artifactId>jobportal</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
