@@ -37,7 +37,7 @@ public class ContactServiceImpl implements IContactService{
         Contact contact = new Contact();
 //        data will only be copied whose field name matches in both the source and target
         BeanUtils.copyProperties(contactDto, contact);
-        contact.setCreatedAt(LocalDateTime.now());
+//        contact.setCreatedAt(LocalDateTime.now());
         return contact;
     }
 }
